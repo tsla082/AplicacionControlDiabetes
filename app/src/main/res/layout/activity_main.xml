@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:shrinkColumns="*"
     android:stretchColumns="*"
-    android:background="#ffffff">
+    android:background="@drawable/alimentarse_sano"
+
+    >
 
     <TableRow
         android:layout_height="wrap_content"
