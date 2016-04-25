@@ -1,5 +1,6 @@
 package com.tsla082.apps.aplicacioncontroldiabetes;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -17,7 +18,7 @@ import org.achartengine.renderer.BasicStroke;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
-public class TendenciaHistoricaActivity extends AppCompatActivity {
+public class TendenciaHistoricaActivity extends Activity {
 
 
     /** Colors to be used for the pie slices. */

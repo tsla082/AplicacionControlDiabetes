@@ -1,5 +1,6 @@
 package com.tsla082.apps.aplicacioncontroldiabetes;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -10,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class DatosPersonales extends AppCompatActivity {
+public class DatosPersonales extends Activity {
 
     private EditText nombre, apellidop, apellidom, celular;
     private Cursor fila;
