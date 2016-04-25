@@ -40,6 +40,8 @@ public class RegistroAlimentosYControlActivity extends Activity {
 
     ArrayList<AlimentosObjetos> alimentosObjetoses;
 
+    String t;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
