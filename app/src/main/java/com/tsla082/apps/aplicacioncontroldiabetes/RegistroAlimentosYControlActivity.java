@@ -3,11 +3,13 @@ package com.tsla082.apps.aplicacioncontroldiabetes;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -40,7 +42,6 @@ public class RegistroAlimentosYControlActivity extends Activity {
 
     ArrayList<AlimentosObjetos> alimentosObjetoses;
 
-    String t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +76,12 @@ public class RegistroAlimentosYControlActivity extends Activity {
 
         alimentosObjetoses=new ArrayList<AlimentosObjetos>();
 
+
         baseAdapter=new AlimentosMedicacionAdapter(getApplicationContext(),alimentosObjetoses);
 
         listView.setAdapter(baseAdapter);
+
+
     }
 
     @Override
@@ -106,15 +110,14 @@ public class RegistroAlimentosYControlActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                AlimentosObjetos alimentosObjetos=new AlimentosObjetos(String.valueOf(spnc.getSelectedItemPosition()),sp01.getSelectedItem().toString(),sp02.getSelectedItem().toString(),true);
+                AlimentosObjetos alimentosObjetos = new AlimentosObjetos(String.valueOf(spnc.getSelectedItemPosition()), sp01.getSelectedItem().toString(), sp02.getSelectedItem().toString(), true);
 
                 alimentosObjetoses.add(alimentosObjetos);
                 System.err.println(alimentosObjetos.getTipoComida() + " " + alimentosObjetos.getIdentidad());
 
-                 baseAdapter.notifyDataSetChanged();
-                // listView.invalidateViews();
-                listView.setAdapter(baseAdapter);
+                baseAdapter.notifyDataSetChanged();
 
+                //listView.setAdapter(baseAdapter);
 
             }
         });
@@ -123,8 +126,8 @@ public class RegistroAlimentosYControlActivity extends Activity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                btn1.setImageResource(R.drawable.ic_add_circle_white_36dp);
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    btn1.setImageResource(R.drawable.ic_add_circle_white_36dp);
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     btn1.setImageResource(R.drawable.ic_add_circle_black_36dp);
                 }
@@ -132,15 +135,6 @@ public class RegistroAlimentosYControlActivity extends Activity {
             }
         });
 
-
-
-
-        ArrayList<AlimentosObjetos> Alimentoslist = new ArrayList<AlimentosObjetos>();
-
-        AlimentosMedicacionAdapter alimentosMedicacionAdapter
-                = new AlimentosMedicacionAdapter(getApplicationContext(), Alimentoslist);
-
-        listView.setAdapter(alimentosMedicacionAdapter);
 
         btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,10 +149,26 @@ public class RegistroAlimentosYControlActivity extends Activity {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     btnsend.setImageResource(R.drawable.ic_save_white_36dp);
-                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     btnsend.setImageResource(R.drawable.ic_save_black_36dp);
-                 }
+                }
                 return false;
+            }
+        });
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                  AlimentosObjetos alimentosObjetos = alimentosObjetoses.get(position);
+
+                  Log.d("ListaObject", "position :" + position + " getTipoComida:" + alimentosObjetos.getTipoComida() + " getIdentidad:" + alimentosObjetos.getIdentidad() + " getAlimentos:" + alimentosObjetos.getAlimentos());
+
+                alimentosObjetoses.remove(position);
+
+                baseAdapter.notifyDataSetChanged();
             }
         });
 

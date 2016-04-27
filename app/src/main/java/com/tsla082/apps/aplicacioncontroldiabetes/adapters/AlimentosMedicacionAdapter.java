@@ -42,7 +42,7 @@ public class AlimentosMedicacionAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         HolderListaAlimentos holderListaAlimentos;
 
@@ -68,7 +68,6 @@ public class AlimentosMedicacionAdapter extends BaseAdapter {
          //   holderListaAlimentos.tipocomida.setText(AlimentosMedicacionAdapter.get(position).getIdentidad());
             holderListaAlimentos.alimentotipo.setText(AlimentosMedicacionAdapter.get(position).getAlimentos());
             holderListaAlimentos.selectedfood.setChecked(AlimentosMedicacionAdapter.get(position).isSelected());
-
 
         }
 

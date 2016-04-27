@@ -34,7 +34,9 @@
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:text="ALIMENTOS Y MEDICACIÓN"
-                android:textSize="45px" />
+                android:textSize="45px"
+                android:textColor="#000000"
+                />
 
         </LinearLayout>
 
@@ -50,7 +52,9 @@
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="left"
                 android:text="REGISTRO DIARIO DE ALIMENTOS"
-                android:textSize="35px" />
+                android:textSize="35px"
+                android:textColor="#000000"
+                />
 
         </LinearLayout>
 
@@ -201,7 +205,9 @@
         <ListView
             android:id="@+id/listaalimentos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></ListView>
+            android:layout_height="wrap_content">
+
+        </ListView>
 
 
     </LinearLayout>
@@ -225,7 +231,9 @@
                 android:fontFamily="sans-serif"
                 android:gravity="left"
                 android:text=" REGISTRO DIARIO DE MEDICAMENTOS"
-                android:textSize="26px" />
+                android:textSize="26px"
+                android:textColor="#000000"
+                />
 
         </LinearLayout>
 
@@ -253,10 +261,11 @@
                         android:id="@+id/chk01"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/BLACK"
-                        android:checked="false"
+                         android:checked="false"
                         android:text="Tomé medicamentos "
-                        android:textColor="@color/BLACK" />
+                        android:textColor="#000000"
+                        android:buttonTint="#000000"
+                        />
 
                 </LinearLayout>
 

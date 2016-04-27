@@ -10,7 +10,7 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-
+                 android:focusable="false"
                 >
                 <TextView
                     android:layout_width="20px"
@@ -18,7 +18,7 @@
                     android:id="@+id/txtnumerocomida"
                     android:textColor="#000000"
                     android:fontFamily="comic-sans"
-
+                     android:focusable="false"
                     />
 
             </LinearLayout>
@@ -29,7 +29,7 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-
+                 android:focusable="false"
                 >
                             <TextView
                                 android:layout_width="250px"
@@ -37,7 +37,7 @@
                                 android:id="@+id/txttipocomida"
                                 android:textColor="#000000"
                                 android:fontFamily="comic-sans"
-
+                                android:focusable="false"
                                 />
 
             </LinearLayout>
@@ -49,7 +49,6 @@
                 android:layout_weight="1"
                 android:layout_gravity="left|center"
                 android:gravity="left|center"
-
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,13 +70,17 @@
                 >
 
                 <CheckBox
-                    android:buttonTint="#000000"
                     android:layout_width="110px"
                     android:layout_height="wrap_content"
                     android:text="Si"
                     android:id="@+id/chkMantener"
                     android:textColor="#000000"
-                    android:checked="false"
+                    android:buttonTint="#000000"
+
+
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:focusableInTouchMode="false"
 
                     />
             </LinearLayout>
