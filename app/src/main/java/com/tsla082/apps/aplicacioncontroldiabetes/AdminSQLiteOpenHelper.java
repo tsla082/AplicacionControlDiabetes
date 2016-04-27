@@ -28,7 +28,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + AlimentosMedicacionDBContract.AlimentosMedicacionEntries.TABLE_NAME + "( "+
                               AlimentosMedicacionDBContract.AlimentosMedicacionEntries.COLUMN_FOOD_DATE+" DATE ,"+
                               AlimentosMedicacionDBContract.AlimentosMedicacionEntries.COLUMN_MEDICATION_STATE+" INTEGER "+" )";
-
+    //hola
     //fin luis control alimentos
 
     public AdminSQLiteOpenHelper(Context context) {
